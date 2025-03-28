@@ -1,14 +1,16 @@
-using System.Diagnostics.Contracts;
+using Raylib_cs;
 
-class Treasure : GameObject
+class Points : FallingElement
 {
-    public Treasure(int x, int y) : base(x, y)
+    public string _pointType;
+
+    public Points(int x, int y, string pointType) : base(x, y, Color.Gold, 20, 20, 2)
     {
-        
+        _pointType = pointType;
     }
 
     public override void Draw()
     {
-        throw new NotImplementedException();
+        Raylib.DrawRectangle(_x, _y, _width, _height, _color);
     }
 }
